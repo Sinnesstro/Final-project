@@ -1,0 +1,190 @@
+body{
+    background-color: #000000;
+    font-family: 'Open Sans', sans
+}
+@font-face {
+    font-family: 'Open Sans';
+    src: url('https://fonts.googleapis.com/css2?family=Open+Sans&display=swap');
+}
+.navbar{
+    max-width: 1366px;
+    width: 100%;
+    margin: 41px auto;
+    display: flex;
+    justify-content: space-evenly;
+}
+ul label{
+    color: white;
+}
+.nav-text{
+    margin-right: 20px;
+    width: 90%;
+    max-width: 90px;
+    
+}
+.navbar .img{
+    margin-left: 68px;
+    margin-right: 259px;
+    flex: 100%;
+}
+.navbar a{
+    font-size: 14px;
+    color: #434343;
+    flex: 100%;
+    color: white;
+}
+
+.menu {
+    
+    display: flex;
+    
+    gap: 1em;
+    
+    font-size: 18px;
+    
+}
+    
+.menu li {
+    
+    padding: 5px 14px;
+    
+}
+input[type=checkbox]{
+
+    display: none;
+    
+    } 
+    
+    /*HAMBURGER MENU*/
+    
+    .hamburger {
+    
+    display: none;
+    
+    font-size: 24px;
+    
+    user-select: none;
+    
+    }
+    
+@media (max-width: 768px) {
+    
+.menu { 
+    
+    display:none;
+    text-align: center;
+    right: 0;
+    background-color: #EE4967;
+    left: 0;
+    padding: 16px 0;
+    
+}
+.menu a{
+    color: white;
+}
+.menu li:hover {
+    
+    display: inline-block;
+    
+    background-color:#4c9e9e;
+    
+    transition: 0.3s ease;
+    
+}
+    
+.menu li + li {
+    
+    margin-top: 12px;
+    
+}
+    
+input[type=checkbox]:checked ~ .menu{
+    
+display: block;
+    
+    }
+    
+.hamburger {
+    
+    display: block;
+    
+}
+    
+}
+.fixed-header {
+    position: relative;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 999;
+    transition: all 0.3s ease-in-out;
+}
+  
+.fixed-header.scrolled {
+    background-color: #333;
+    color: #fff;
+}
+.logo img{
+    width: 3rem;
+    height: 3rem;
+}
+/*main*/
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    grid-gap: 20px;
+    align-items: center;
+    max-width: 1366px;
+    width: 90%;
+    margin: 8rem auto;
+}
+  
+.grid-item {
+    padding: 10px;
+}
+.grid-item{
+    color: white;
+}
+.grid-item h1{
+   width: 12rem;
+   background-color: #EE4967;
+   font-size: 30px;
+}
+.grid-item p{
+    width: 20rem;
+}
+.left{
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: end;
+}
+.left img{
+    margin-bottom: 24px;
+    width: 1rem;
+    height: 1rem;
+}
+.left .discord{
+    width: 2rem;
+    height: 2rem;
+}
+.middle{
+    display: grid;
+    justify-content: center;
+}
+@media (max-width: 640px) {
+    .left {
+        display: grid;
+        justify-items: start;
+    }
+}
+@media (max-width: 620px){
+    .middle{
+        display: grid;
+        justify-content: start;
+    }
+    .middle img{
+        width: 7rem;
+        height: 7rem;
+    }
+}
