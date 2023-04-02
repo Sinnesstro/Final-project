@@ -1,5 +1,12 @@
+:root {
+    --main-color: #00fff5;
+    --title-color: #0066ff;
+    --size-20: 20px;
+    --size-28: 28px;
+
+}
 body{
-    background-color: #000000;
+    background: #061427;
     font-family: 'Open Sans', sans
 }
 @font-face {
@@ -112,12 +119,7 @@ display: block;
     
 }
 .fixed-header {
-    position: relative;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 999;
-    transition: all 0.3s ease-in-out;
+    position: sticky; top: 0;
 }
   
 .fixed-header.scrolled {
@@ -130,7 +132,7 @@ display: block;
 }
 /*main*/
 
-.container {
+.about{
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     grid-gap: 20px;
@@ -139,52 +141,279 @@ display: block;
     width: 90%;
     margin: 8rem auto;
 }
-  
-.grid-item {
-    padding: 10px;
+
+.head{
+    display: flex;
+    justify-content: center;
+    margin-top: 168px;
 }
-.grid-item{
-    color: white;
+.head h1{
+    color: var(--main-color);
+    font-size: var(--size-28);
 }
-.grid-item h1{
-   width: 12rem;
-   background-color: #EE4967;
-   font-size: 30px;
+.avatar{
+    width: 325px;
+    height: 391px;
+    border-radius: 30px;
+    border: 1px dashed var(--title-color);
+    padding: 30px;
 }
-.grid-item p{
-    width: 20rem;
+.text{
+    color: var(--main-color);
+    
+}
+.text h2{
+    font-size: 24px;
+}
+.text p{
+    width: 607px;
+    height: 115px;
+    font-size: var(--size-20);
+}
+@media (max-width: 620px){
+    .text{
+        display: grid;
+        justify-content: start;
+    }
+}
+.arrow{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+.arrow img{
+    width: 40px;
+    height: 70px;
+    margin-bottom: 28px;
+}
+.arrow h2{
+    color: #0066ff;
+    font-size: var(--size-28);
 }
 .left{
-    display: grid;
-    grid-template-columns: repeat(1, 1fr);
-    justify-items: end;
+    display: flex;
+    align-items: flex-end;
+    flex-direction: column;
 }
 .left img{
     margin-bottom: 24px;
-    width: 1rem;
-    height: 1rem;
+}
+@media (max-width: 1050px) {
+    .left {
+        display: none;
+    }
 }
 .left .discord{
     width: 2rem;
     height: 2rem;
 }
+.about-left .discord{
+    width: 2rem;
+    height: 2rem;
+}
+.head2{
+    display: flex;
+    justify-content: center;
+    margin-bottom: 22px;
+}
+.head2 h2{
+    font-size: var(--size-28);
+    color: var(--main-color);
+    margin-top: 150px;
+}
+.container-work{
+    max-width: 1333px;
+    width: 90%;
+    margin: 0 auto;
+}
+.work{
+   display: grid;
+   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+   gap: 20px;
+}
+
+.work img{
+    border-radius: 30px;
+    border: 1px dashed var(--title-color);
+    padding: 30px;
+    max-width: 400px;
+    max-height: 600px;
+}
+.work-cont{
+    position: relative;
+}
+.work-img {
+    opacity: 1;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
 .middle{
-    display: grid;
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+  
+.work-cont:hover .work-img {
+    opacity: 0.3;
+}
+  
+.work-cont:hover .middle {
+    opacity: 1;
+}
+  
+.text-hover {
+    background-color: #04AA6D;
+    color: white;
+    font-size: 16px;
+    padding: 16px 32px;
+}
+.btn{
+    display: flex;
     justify-content: center;
 }
-@media (max-width: 640px) {
-    .left {
-        display: grid;
-        justify-items: start;
-    }
+.btn a{
+    color: white;
+    border-radius: 30px;
+    width: 268px;
+    height: 49px;
+    font-size: var(--size-20);
 }
-@media (max-width: 620px){
-    .middle{
-        display: grid;
-        justify-content: start;
-    }
-    .middle img{
-        width: 7rem;
-        height: 7rem;
-    }
+
+.exp{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 1216px;
+    width: 90%;
+    margin: 0 auto;
+    border: 1px dashed var(--title-color);
+    border-radius: 30px;
+    margin-bottom: 80px;
+    width: 987px;
+    height: 238px;
+}
+.exp2{
+    display: none;
+}
+.exp h3, p{
+    color: white;
+}
+
+.exp h3{
+    margin-top: 79px;
+    margin-left: 54px;
+    font-size: 22px;
+}
+.exp p{
+    width: 569px;
+    height: 88px;
+    margin-top: 30px;
+}
+.modal-hidden{
+    display: none;
+}
+@media (max-width:600px){
+    .exp{
+        display: none;
+}
+.modal-hidden{
+    display: block;
+    margin-top: 5rem;
+}
+.btn2{
+    position: relative;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: var(--title-color);
+    font-size: 20px;
+    color: white;
+    padding: 10px 30px;
+    cursor: pointer;
+}
+.modal {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    visibility: hidden;
+}
+.modal-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: black;
+    padding: 1rem 1.5rem;
+    width: 24rem;
+    border-radius: 0.5rem;
+}
+  .close-button {
+    float: right;
+    width: 1.5rem;
+    line-height: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: lightgray;
+}
+.show-modal {
+    opacity: 1;
+    visibility: visible;
+    transform: scale(1.0); 
+}
+.modal-hidden h3{
+    color: var(--main-color);
+}
+}
+.head3{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 22px;
+}
+.head3 h2{
+    font-size: var(--size-28);
+    color: var(--main-color);
+    margin-top: 150px;
+    margin-bottom: 52px;
+}
+.head3 p{
+    font-size: var(--size-20);
+    color: white;
+    margin-top: 22px;
+}
+.container{
+    max-width: 1216px;
+    width: 90%;
+    margin: 0 auto;
+    margin-top: 100px;
+    border: 1px dashed var(--title-color);
+    border-radius: 30px;
+    padding: 20px;
+    width: 294px;
+    height: 214px;
+}
+.about-left img, p{
+    display: inline;
+}
+.about-left img{
+    margin-right: 30px;
+    margin-top: 25px;
+}
+.cont{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    margin-bottom: 64px;
+}
+.pre{
+    margin-top: 50px;
 }
