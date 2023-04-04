@@ -291,7 +291,7 @@ display: block;
 .exp{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    max-width: 1216px;
+    max-width: 1220px;
     width: 90%;
     margin: 0 auto;
     border: 1px dashed var(--title-color);
